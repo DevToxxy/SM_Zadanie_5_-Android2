@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+
+    <string name="q_overlord">Anime Overlord powstało na podstawie mangi Kugane Maruyama</string>
+    <string name="q_onepunch">One Punch Man został wyprodukowany przez studio Madhouse</string>
+    <string name="q_note">Light Yagami jest głównym bohaterem anime Death Note</string>
+    <string name="q_abyss">W 2017 Made in Abyss wygrało tytuł najlepszego anime roku</string>
+    <string name="q_hellsing">Hellsing Ultimate to pierwsza adaptacja mangi Koty Hirano</string>
+    <string name="q_kaisen">Jujutsu Kaisen było najlepiej sprzedającą się mangą w 2020 roku</string>
+
+    <string name="correct_answer">Odpowiedź prawidłowa</string>
+    <string name="incorrect_answer">Odpowiedź nieprawidłowa</string>
+
+
+</resources>
