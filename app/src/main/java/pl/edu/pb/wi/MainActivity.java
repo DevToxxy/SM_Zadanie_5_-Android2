@@ -3,6 +3,7 @@ package pl.edu.pb.wi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,10 +16,11 @@ public class MainActivity extends AppCompatActivity {
     private Button nextButton;
     private TextView questionTextView;
     private int currentIndex = 0;
-
+    private static final String QUIZ_TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(QUIZ_TAG, "Wywołana metoda: onCreate");
         setContentView(R.layout.activity_main);
         trueButton = findViewById(R.id.true_button);
         falseButton = findViewById(R.id.false_button);
@@ -46,6 +48,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setNextQuestion();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(QUIZ_TAG, "Wywołana metoda: onStart");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(QUIZ_TAG, "Wywołana metoda: onResume");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(QUIZ_TAG, "Wywołana metoda: onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(QUIZ_TAG, "Wywołana metoda: onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(QUIZ_TAG, "Wywołana metoda: onDestroy");
+
     }
 
     private Question[] questions = new Question[]{
