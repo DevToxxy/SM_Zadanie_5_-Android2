@@ -2,6 +2,7 @@ package pl.edu.pb.wi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,21 +12,39 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KEY_EXTRA_HINT = "pl.edu.pb.wi.quiz.hint" ;
     private Button trueButton;
     private Button falseButton;
     private Button nextButton;
+    private Button promptButton;
     private TextView questionTextView;
     private int currentIndex = 0;
     private static final String QUIZ_TAG = "MainActivity";
+    private static final String KEY_CURRENT_INDEX = "currentIndex";
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(QUIZ_TAG, "Wywołana została metoda: onSaveInstanceState");
+        outState.putInt(KEY_CURRENT_INDEX, currentIndex);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(QUIZ_TAG, "Wywołana metoda: onCreate");
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            currentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
+        }
+
         trueButton = findViewById(R.id.true_button);
         falseButton = findViewById(R.id.false_button);
         nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
+        promptButton = findViewById(R.id.prompt_button);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 checkAnswerCorrectness(true);
             }
         });
+
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 currentIndex = (currentIndex + 1) % questions.length;
                 setNextQuestion();
             }
+        });
+
+        promptButton.setOnClickListener((v) -> {
+            Intent intent = new Intent(MainActivity.this, PromptActivity.class);
+            boolean correctAnswer = questions[currentIndex].isTrueAnswer();
+            intent.putExtra(KEY_EXTRA_HINT, correctAnswer);
+            startActivity(intent);
         });
         setNextQuestion();
     }
