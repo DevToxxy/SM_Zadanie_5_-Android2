@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
         promptButton.setOnClickListener((v) -> {
             Intent intent = new Intent(MainActivity.this, PromptActivity.class);
-            boolean correctAnswer = questions[currentIndex].isTrueAnswer();
-            intent.putExtra(KEY_EXTRA_HINT, correctAnswer);
+            int hint = questions[currentIndex].getHintId();
+            intent.putExtra(KEY_EXTRA_HINT, hint);
             startActivity(intent);
         });
         setNextQuestion();
@@ -111,12 +111,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Question[] questions = new Question[]{
-            new Question(R.string.q_overlord, false),
-            new Question(R.string.q_onepunch, true),
-            new Question(R.string.q_note, true),
-            new Question(R.string.q_abyss, true),
-            new Question(R.string.q_hellsing, false),
-            new Question(R.string.q_kaisen, false)
+            new Question(R.string.q_overlord, false,R.string.q_overlord_hint),
+            new Question(R.string.q_onepunch, true,R.string.q_onepunch_hint),
+            new Question(R.string.q_note, true,R.string.q_note_hint),
+            new Question(R.string.q_abyss, true,R.string.q_abyss_hint),
+            new Question(R.string.q_hellsing, false,R.string.q_hellsing_hint),
+            new Question(R.string.q_kaisen, false,R.string.q_kaisen_hint)
     };
 
     private void checkAnswerCorrectness(boolean userAnswer) {

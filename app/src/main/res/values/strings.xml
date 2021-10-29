@@ -12,6 +12,13 @@
     <string name="q_hellsing">Hellsing Ultimate to pierwsza adaptacja mangi Koty Hirano</string>
     <string name="q_kaisen">Jujutsu Kaisen było najlepiej sprzedającą się mangą w 2020 roku</string>
 
+    <string name="q_overlord_hint">Pierwsze dzieło literackie Maruyamy było powieścią</string>
+    <string name="q_onepunch_hint">Studio madhouse jest jednym z najbardziej rozpoznawalnych producentów anime</string>
+    <string name="q_note_hint">Light Yagami jest głównym przeciwnikiem detektywa o pseudonimie "L"</string>
+    <string name="q_abyss_hint">Made in Abyss posiada ocenę 8.7/10 w serwisie myanimelist.net</string>
+    <string name="q_hellsing_hint">Hellsing Ultimate powstało w 2006 roku. 9 lat po premierze mangi.</string>
+    <string name="q_kaisen_hint">Jujutsu Kaisen sprzedało się w nakładzie ponad 6.7 miliona egzemplarzy</string>
+
     <string name="correct_answer">Odpowiedź prawidłowa</string>
     <string name="incorrect_answer">Odpowiedź nieprawidłowa</string>
 

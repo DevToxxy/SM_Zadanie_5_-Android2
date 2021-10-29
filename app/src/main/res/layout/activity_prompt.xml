@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".PromptActivity">
 
     <TextView
@@ -12,18 +14,14 @@
         android:layout_height="78dp"
         android:text="Czy na pewno chcesz zobaczyć podpowiedź?"
         android:textAlignment="center"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="103dp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="298dp"
         android:layout_height="86dp"
         android:text="Pokaż podpowiedź"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="422dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -31,8 +29,6 @@
         android:layout_height="158dp"
         android:text="TextView"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="226dp"
-        tools:text="Odpowiedź"/>
+        android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
