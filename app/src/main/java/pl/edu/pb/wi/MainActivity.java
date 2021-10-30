@@ -1,5 +1,6 @@
 package pl.edu.pb.wi;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private int currentIndex = 0;
     private static final String QUIZ_TAG = "MainActivity";
     private static final String KEY_CURRENT_INDEX = "currentIndex";
-
+    private static final int REQUEST_CODE_PROMPT = 0;
+    private boolean hintWasShown;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentIndex = (currentIndex + 1) % questions.length;
+                hintWasShown = false;
                 setNextQuestion();
             }
         });
@@ -72,8 +75,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, PromptActivity.class);
             int hint = questions[currentIndex].getHintId();
             intent.putExtra(KEY_EXTRA_HINT, hint);
-            startActivity(intent);
+            startActivityForResult(intent,REQUEST_CODE_PROMPT);
         });
+
         setNextQuestion();
     }
 
@@ -110,6 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(resultCode != RESULT_OK) {return;}
+        if(requestCode == REQUEST_CODE_PROMPT){
+            if (data == null) {return;}
+            hintWasShown = data.getBooleanExtra(PromptActivity.KEY_EXTRA_HINT_SHOWN, false);
+        }
+    }
+
+
     private Question[] questions = new Question[]{
             new Question(R.string.q_overlord, false,R.string.q_overlord_hint),
             new Question(R.string.q_onepunch, true,R.string.q_onepunch_hint),
@@ -122,12 +137,16 @@ public class MainActivity extends AppCompatActivity {
     private void checkAnswerCorrectness(boolean userAnswer) {
         boolean correctAnswer = questions[currentIndex].isTrueAnswer();
         int resultMessageId = 0;
-        if (userAnswer == correctAnswer) {
-            resultMessageId = R.string.correct_answer;
+        if(hintWasShown){
+            resultMessageId = R.string.hint_was_shown;
         } else {
-            resultMessageId = R.string.incorrect_answer;
+            if (userAnswer == correctAnswer) {
+                resultMessageId = R.string.correct_answer;
+            } else {
+                resultMessageId = R.string.incorrect_answer;
+            }
+            Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
     }
 
     private void setNextQuestion() {

@@ -9,7 +9,7 @@
     tools:context=".PromptActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/certain_text_view"
         android:layout_width="296dp"
         android:layout_height="78dp"
         android:text="Czy na pewno chcesz zobaczyć podpowiedź?"
@@ -17,18 +17,18 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/hint_button"
         android:layout_width="298dp"
         android:layout_height="86dp"
-        android:text="Pokaż podpowiedź"
+        android:text="@string/button_hint"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/hint_text_view"
         android:layout_width="294dp"
         android:layout_height="158dp"
-        android:text="TextView"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        tools:text = "Podpowiedz" />
 
 </LinearLayout>

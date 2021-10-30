@@ -4,6 +4,8 @@
     <string name="button_false">Fałsz</string>
     <string name="button_next">Następne</string>
     <string name="button_prompt">Podpowiedź</string>
+    <string name="button_hint">Pokaż Podpowiedź</string>
+
 
     <string name="q_overlord">Anime Overlord powstało na podstawie mangi Kugane Maruyama</string>
     <string name="q_onepunch">One Punch Man został wyprodukowany przez studio Madhouse</string>
@@ -22,5 +24,6 @@
     <string name="correct_answer">Odpowiedź prawidłowa</string>
     <string name="incorrect_answer">Odpowiedź nieprawidłowa</string>
 
+    <string name="hint_was_shown">Podpowiedź została aktywowana</string>
 
 </resources>
