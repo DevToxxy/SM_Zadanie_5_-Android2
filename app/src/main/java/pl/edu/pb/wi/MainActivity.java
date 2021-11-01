@@ -48,12 +48,7 @@ public class MainActivity extends AppCompatActivity {
         questionTextView = findViewById(R.id.question_text_view);
         promptButton = findViewById(R.id.prompt_button);
 
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswerCorrectness(true);
-            }
-        });
+        trueButton.setOnClickListener(v -> checkAnswerCorrectness(true));
 
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,8 +140,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 resultMessageId = R.string.incorrect_answer;
             }
-            Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
         }
+        Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
+
     }
 
     private void setNextQuestion() {

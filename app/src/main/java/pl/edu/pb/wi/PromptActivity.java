@@ -30,6 +30,7 @@ public class PromptActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int _hint = hint;
                 hintTextView.setText(_hint);
+                setHintShownResult(true);
             }
         });
     }
