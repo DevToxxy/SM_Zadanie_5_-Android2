@@ -24,6 +24,6 @@
     <string name="correct_answer">Odpowiedź prawidłowa</string>
     <string name="incorrect_answer">Odpowiedź nieprawidłowa</string>
 
-    <string name="hint_was_shown">Podpowiedź została aktywowana</string>
+    <string name="hint_was_shown">Wykorzystano podpowiedź</string>
 
 </resources>

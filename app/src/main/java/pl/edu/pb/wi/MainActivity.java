@@ -142,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
-
     }
 
     private void setNextQuestion() {
