@@ -21,10 +21,19 @@
 2021-10-26 09:55:03.648 9122-9122/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onStart
 2021-10-26 09:55:03.650 9122-9122/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onResume
 
-6.Po zmianie orientacji urządzenia
+6. Po zmianie orientacji urządzenia
 2021-10-26 09:57:46.851 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onPause
 2021-10-26 09:57:46.861 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onStop
 2021-10-26 09:57:46.890 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onDestroy
 2021-10-26 09:57:46.931 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onCreate
 2021-10-26 09:57:47.014 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onStart
 2021-10-26 09:57:47.016 10710-10710/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onResume
+
+7. Po zmianie orientacji urządzenia z zapamiętaniem stanu
+2021-11-01 15:28:29.153 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onPause
+2021-11-01 15:28:29.154 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onSaveInstanceState
+2021-11-01 15:28:29.161 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onStop
+2021-11-01 15:28:29.162 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onDestroy
+2021-11-01 15:28:29.199 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onCreate
+2021-11-01 15:28:29.273 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onStart
+2021-11-01 15:28:29.276 3281-3281/pl.edu.pb.wi D/MainActivity: Wywołana metoda: onResume

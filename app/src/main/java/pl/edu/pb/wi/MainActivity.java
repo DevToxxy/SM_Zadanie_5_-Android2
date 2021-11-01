@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(QUIZ_TAG, "Wywołana została metoda: onSaveInstanceState");
+        Log.d(QUIZ_TAG, "Wywołana metoda: onSaveInstanceState");
         outState.putInt(KEY_CURRENT_INDEX, currentIndex);
     }
 
